@@ -5,27 +5,22 @@ const bodyParser = require('koa-bodyparser')
 const Static = require('koa-static')
 const Mount = require('koa-mount')
 const cors = require('koa2-cors')
+
 const app = new Koa()
-const router = new Router()
-
-
-// 开放静态资源文件夹
-app.use(Mount('/api',Static(path.join(__dirname, 'public'))))
 app.use(cors())
 app.use(bodyParser())
+const router = new Router()
 
-// app.use(async ctx => {
-//   console.log('ctx', ctx);
-//   ctx.body = 'Hello koa';
-// });
+// 开放静态资源文件夹
+app.use(Mount('/api', Static(path.join(__dirname, 'public'))))
 
-router.get('/', (ctx, next) => {
+
+router.get('/', async (ctx, next) => {
   ctx.body = 'the api is running'
 })
-router.get('/test', (ctx, next) => {
+router.get('/test', async (ctx, next) => {
   ctx.body = 'Hello Koa Router'
 })
-
 
 const weappRouter = require('./router/weapp')
 app.use(weappRouter.routes())

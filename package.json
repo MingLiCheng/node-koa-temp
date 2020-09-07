@@ -19,11 +19,14 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "jssha": "1.5.0",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-mount": "^4.0.0",
+    "koa-redis": "^4.0.1",
     "koa-router": "^9.4.0",
     "koa-static": "^5.0.0",
-    "koa2-cors": "^2.0.6"
+    "koa2-cors": "^2.0.6",
+    "request": "^2.88.2"
   }
 }
