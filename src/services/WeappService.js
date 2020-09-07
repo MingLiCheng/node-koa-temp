@@ -55,7 +55,6 @@ async function getJsApiTicket(accessToken) {
 const WeappService = {
   jsSdkConfig: async (url) => {
     console.log('url', url);
-
     // 首先获取access_token
     const accessToken = await getAccessToken()
     const jsapiTicket = await getJsApiTicket(accessToken)
